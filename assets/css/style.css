@@ -1,20 +1,675 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    line-height: 1.6;
+/* ======================================================
+   SCF - Sistema de Controle e Execução de Processos
+   Sistemas Computacionais
+====================================================== */
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-section {
-    padding: 60px 40px;
+/* ======================================================
+   VARIÁVEIS
+====================================================== */
+
+:root{
+
+    --azul-escuro:#0b1f3a;
+    --azul-medio:#133865;
+    --azul-claro:#2563eb;
+
+    --cinza-texto:#4a5568;
+    --cinza-fundo:#f8fafc;
+
+    --branco:#ffffff;
+
 }
 
-#hero {
-    background: #0b1f3a;
-    color: white;
-    text-align: center;
-    padding: 100px 40px;
+/* ======================================================
+   BASE
+====================================================== */
+
+html{
+    scroll-behavior:smooth;
 }
 
-h1, h2 {
-    margin-bottom: 20px;
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.7;
+
+    color:var(--cinza-texto);
+
+    background:white;
+
+}
+
+/* ======================================================
+   CONTAINER
+====================================================== */
+
+.container{
+
+    max-width:1200px;
+    margin:auto;
+
+}
+
+/* ======================================================
+   TIPOGRAFIA
+====================================================== */
+
+h1,
+h2,
+h3{
+
+    color:var(--azul-escuro);
+
+    margin-bottom:20px;
+
+}
+
+h1{
+    font-size:3rem;
+}
+
+h2{
+
+    text-align:center;
+    font-size:2.2rem;
+
+}
+
+h3{
+    font-size:1.2rem;
+}
+
+p{
+    margin-bottom:15px;
+}
+
+/* ======================================================
+   NAVBAR
+====================================================== */
+
+.navbar{
+
+    position:sticky;
+    top:0;
+
+    z-index:999;
+
+    background:white;
+
+    border-bottom:1px solid #e5e7eb;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+
+}
+
+.nav-container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:15px 25px;
+
+}
+
+.logo{
+
+    font-size:1.5rem;
+    font-weight:bold;
+
+    color:var(--azul-escuro);
+
+}
+
+.nav-links{
+
+    list-style:none;
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:var(--azul-escuro);
+
+    font-weight:600;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--azul-claro);
+
+}
+
+#theme-toggle{
+
+    border:none;
+    background:none;
+
+    cursor:pointer;
+
+    font-size:1.2rem;
+
+}
+
+/* ======================================================
+   HERO
+====================================================== */
+
+#hero{
+
+    background:linear-gradient(
+        135deg,
+        var(--azul-escuro),
+        var(--azul-medio)
+    );
+
+    color:white;
+
+    text-align:center;
+
+    padding:140px 40px;
+
+}
+
+#hero h1{
+
+    color:white;
+
+}
+
+#hero p{
+
+    color:#dbe7f5;
+
+    max-width:850px;
+
+    margin:auto auto 20px auto;
+
+}
+
+/* ======================================================
+   SEÇÕES
+====================================================== */
+
+section{
+
+    padding:80px 40px;
+
+}
+
+.section-dark{
+
+    background:linear-gradient(
+        135deg,
+        var(--azul-escuro),
+        var(--azul-medio)
+    );
+
+    color:white;
+
+}
+
+.section-dark h2,
+.section-dark h3{
+
+    color:white;
+
+}
+
+.section-dark p{
+
+    color:#dbe7f5;
+
+}
+
+/* ======================================================
+   BOTÕES
+====================================================== */
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 28px;
+
+    background:var(--azul-claro);
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+/* ======================================================
+   CARDS
+====================================================== */
+
+.resultados-grid,
+.execucao-grid,
+.conformidade-grid,
+.ecossistema-grid,
+.kpi-grid,
+.dashboard-grid,
+.diferenciais-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap:24px;
+
+    margin-top:40px;
+
+}
+
+.card,
+.card-resultado{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    border:1px solid #e5e7eb;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+
+    transition:.3s;
+
+}
+
+.card:hover,
+.card-resultado:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 24px rgba(0,0,0,.12);
+
+}
+
+.card h3,
+.card-resultado h3{
+
+    color:var(--azul-escuro);
+
+}
+
+.card p{
+
+    color:var(--cinza-texto);
+
+}
+
+/* ======================================================
+   RESULTADOS
+====================================================== */
+
+.card-resultado{
+
+    text-align:center;
+
+}
+
+.card-resultado h3{
+
+    color:var(--azul-claro);
+
+    font-size:2.5rem;
+
+}
+
+/* ======================================================
+   SCF CORE
+====================================================== */
+
+.ecossistema-central{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:50px 0;
+
+}
+
+.scf-core{
+
+    background:white;
+
+    color:var(--azul-escuro);
+
+    padding:30px 60px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.scf-core h3{
+
+    color:var(--azul-escuro);
+
+    font-size:2rem;
+
+    margin:0;
+
+}
+
+/* ======================================================
+   FLUXOS
+====================================================== */
+
+.fluxo-integracao,
+.fluxo-scf{
+
+    background:#eef4ff;
+
+    padding:30px;
+
+    margin-top:50px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+}
+
+/* ======================================================
+   DASHBOARDS
+====================================================== */
+
+.dashboard-preview{
+
+    text-align:center;
+
+    margin-top:30px;
+
+}
+
+.dashboard-preview img{
+
+    width:100%;
+    max-width:1100px;
+
+    border-radius:12px;
+
+    margin-top:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.dashboard-destaque{
+
+    margin-top:40px;
+
+    background:#eef4ff;
+
+    padding:30px;
+
+    border-left:6px solid var(--azul-claro);
+
+    border-radius:10px;
+
+}
+
+/* ======================================================
+   FORMULÁRIO
+====================================================== */
+
+.contact-form{
+
+    max-width:800px;
+
+    margin:40px auto 0;
+
+    text-align:left;
+
+}
+
+.form-group{
+
+    margin-bottom:20px;
+
+}
+
+.contact-form label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:bold;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    border:1px solid #d1d5db;
+
+    font-size:1rem;
+
+}
+
+.contact-form textarea{
+
+    min-height:140px;
+
+    resize:vertical;
+
+}
+
+.contact-form button{
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+/* ======================================================
+   CTA
+====================================================== */
+
+#contato{
+
+    background:linear-gradient(
+        135deg,
+        var(--azul-escuro),
+        #1a4b84
+    );
+
+    text-align:center;
+
+    color:white;
+
+}
+
+#contato h2{
+
+    color:white;
+
+}
+
+#contato p{
+
+    color:#dbe7f5;
+
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+footer{
+
+    background:#08111f;
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+footer p{
+
+    margin:0;
+
+    color:#dbe7f5;
+
+}
+
+/* ======================================================
+   DARK MODE
+====================================================== */
+
+body.dark-mode{
+
+    background:#08111f;
+    color:#dbe7f5;
+
+}
+
+body.dark-mode .navbar{
+
+    background:#08111f;
+
+    border-bottom:1px solid #294263;
+
+}
+
+body.dark-mode .logo{
+
+    color:white;
+
+}
+
+body.dark-mode .nav-links a{
+
+    color:white;
+
+}
+
+body.dark-mode h2,
+body.dark-mode h3{
+
+    color:white;
+
+}
+
+body.dark-mode .card,
+body.dark-mode .card-resultado{
+
+    background:#13233f;
+
+    border:1px solid #294263;
+
+}
+
+body.dark-mode .card p,
+body.dark-mode .card-resultado p{
+
+    color:#dbe7f5;
+
+}
+
+body.dark-mode .dashboard-destaque,
+body.dark-mode .fluxo-integracao,
+body.dark-mode .fluxo-scf{
+
+    background:#13233f;
+
+}
+
+/* ======================================================
+   RESPONSIVO
+====================================================== */
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2rem;
+    }
+
+    h2{
+        font-size:1.8rem;
+    }
+
+    section{
+        padding:60px 20px;
+    }
+
+    .nav-container{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .nav-links{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:10px;
+
+        font-size:.85rem;
+
+    }
+
+    .scf-core{
+
+        width:100%;
+
+        padding:25px;
+
+    }
+
 }
