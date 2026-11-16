@@ -673,3 +673,37 @@ body.dark-mode .fluxo-scf{
     }
 
 }
+
+.validation-badges {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.validation-badges a {
+
+    text-decoration:none;
+
+}
+
+.validation-badges svg {
+
+    transition:.3s ease;
+
+}
+
+.validation-badges svg:hover {
+
+    transform:translateY(-2px);
+
+    filter:brightness(1.08);
+
+}
