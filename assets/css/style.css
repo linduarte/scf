@@ -23,6 +23,7 @@
 
     --cinza-texto:#4a5568;
     --cinza-fundo:#f8fafc;
+    --cinza-claro:#e5e7eb;
 
     --branco:#ffffff;
 
@@ -39,22 +40,26 @@ html{
 body{
 
     font-family:Arial, Helvetica, sans-serif;
-    line-height:1.7;
+
+    background:var(--branco);
 
     color:var(--cinza-texto);
 
-    background:white;
+    line-height:1.7;
 
 }
-
-/* ======================================================
-   CONTAINER
-====================================================== */
 
 .container{
 
     max-width:1200px;
+
     margin:auto;
+
+}
+
+section{
+
+    padding:80px 40px;
 
 }
 
@@ -62,9 +67,7 @@ body{
    TIPOGRAFIA
 ====================================================== */
 
-h1,
-h2,
-h3{
+h1,h2,h3{
 
     color:var(--azul-escuro);
 
@@ -77,10 +80,8 @@ h1{
 }
 
 h2{
-
-    text-align:center;
     font-size:2.2rem;
-
+    text-align:center;
 }
 
 h3{
@@ -89,6 +90,30 @@ h3{
 
 p{
     margin-bottom:15px;
+}
+
+/* ======================================================
+   MARCA SCF
+====================================================== */
+
+.scf-brand{
+
+    display:inline-block;
+
+    background:var(--azul-escuro);
+
+    color:white;
+
+    padding:2px 8px;
+
+    border-radius:4px;
+
+    font-weight:700;
+
+    font-size:.95em;
+
+    letter-spacing:.5px;
+
 }
 
 /* ======================================================
@@ -104,7 +129,9 @@ p{
 
     background:white;
 
-    border-bottom:1px solid #e5e7eb;
+    border-bottom:1px solid var(--cinza-claro);
+
+    backdrop-filter:blur(10px);
 
     box-shadow:0 2px 8px rgba(0,0,0,.05);
 
@@ -116,20 +143,23 @@ p{
 
     margin:auto;
 
+    padding:15px 25px;
+
     display:flex;
-    align-items:center;
+
     justify-content:space-between;
 
-    padding:15px 25px;
+    align-items:center;
 
 }
 
 .logo{
 
-    font-size:1.5rem;
-    font-weight:bold;
-
     color:var(--azul-escuro);
+
+    font-size:1.4rem;
+
+    font-weight:bold;
 
 }
 
@@ -162,6 +192,7 @@ p{
 #theme-toggle{
 
     border:none;
+
     background:none;
 
     cursor:pointer;
@@ -186,7 +217,11 @@ p{
 
     text-align:center;
 
-    padding:140px 40px;
+    min-height:70vh;
+
+    display:flex;
+
+    align-items:center;
 
 }
 
@@ -202,17 +237,60 @@ p{
 
     max-width:850px;
 
-    margin:auto auto 20px auto;
+    margin:auto auto 25px;
 
 }
 
 /* ======================================================
-   SEÇÕES
+   BOTÕES
 ====================================================== */
 
-section{
+.btn{
 
-    padding:80px 40px;
+    display:inline-block;
+
+    padding:14px 28px;
+
+    border-radius:8px;
+
+    background:var(--azul-claro);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    border:none;
+
+    cursor:pointer;
+
+    box-shadow:0 6px 20px rgba(37,99,235,.25);
+
+    transition:.3s ease;
+
+}
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+/* ======================================================
+   FUNDOS
+====================================================== */
+
+#sobre-scf,
+#resultados,
+#conformidade,
+#dashboards,
+#segmentos,
+#diferenciais{
+
+    background:white;
 
 }
 
@@ -242,37 +320,7 @@ section{
 }
 
 /* ======================================================
-   BOTÕES
-====================================================== */
-
-.btn{
-
-    display:inline-block;
-
-    padding:14px 28px;
-
-    background:var(--azul-claro);
-
-    color:white;
-
-    text-decoration:none;
-
-    border-radius:8px;
-
-    transition:.3s;
-
-}
-
-.btn:hover{
-
-    background:#1d4ed8;
-
-    transform:translateY(-2px);
-
-}
-
-/* ======================================================
-   CARDS
+   GRIDS
 ====================================================== */
 
 .resultados-grid,
@@ -286,7 +334,7 @@ section{
     display:grid;
 
     grid-template-columns:
-        repeat(auto-fit,minmax(250px,1fr));
+    repeat(auto-fit,minmax(250px,1fr));
 
     gap:24px;
 
@@ -294,20 +342,24 @@ section{
 
 }
 
+/* ======================================================
+   CARDS
+====================================================== */
+
 .card,
 .card-resultado{
 
     background:white;
 
-    padding:25px;
-
     border-radius:12px;
 
-    border:1px solid #e5e7eb;
+    padding:25px;
+
+    border:1px solid var(--cinza-claro);
 
     box-shadow:0 4px 12px rgba(0,0,0,.05);
 
-    transition:.3s;
+    transition:.3s ease;
 
 }
 
@@ -333,10 +385,6 @@ section{
 
 }
 
-/* ======================================================
-   RESULTADOS
-====================================================== */
-
 .card-resultado{
 
     text-align:center;
@@ -345,14 +393,14 @@ section{
 
 .card-resultado h3{
 
-    color:var(--azul-claro);
-
     font-size:2.5rem;
+
+    color:var(--azul-claro);
 
 }
 
 /* ======================================================
-   SCF CORE
+   ECOSSISTEMA
 ====================================================== */
 
 .ecossistema-central{
@@ -365,69 +413,74 @@ section{
 
 }
 
-.scf-core {
+.scf-core{
 
     background:white;
 
-    padding:40px 60px;
+    width:100%;
+    max-width:650px;
 
-    border-radius:16px;
+    padding:50px 70px;
+
+    border-radius:18px;
 
     text-align:center;
-
-    min-width:420px;
 
     box-shadow:0 12px 30px rgba(0,0,0,.20);
 
 }
 
-.scf-core h3 {
+.scf-core h3{
 
-    color:#0b1f3a;
+    color:var(--azul-escuro);
 
     font-size:2.4rem;
 
-    margin-bottom:10px;
+}
+
+.scf-subtitle{
+
+    color:var(--azul-claro);
+
+    font-size:1.15rem;
+
+    font-weight:700;
+
+    line-height:1.5;
+
+    max-width:500px;
+
+    margin:15px auto;
 
 }
 
-.scf-subtitle {
+.scf-description{
 
-    color: var(--azul-claro);
+    color:#475569;
 
-    font-size: 1.1rem;
+    line-height:1.4;
 
-    font-weight: 600;
-
-    margin: 12px 0;
+    font-size:.95rem;
 
 }
-
-.scf-description {
-
-    color: #475569;
-
-    font-size: .95rem;
-
-}
-
 
 /* ======================================================
-   FLUXOS
+   KPI
 ====================================================== */
 
-.fluxo-integracao,
-.fluxo-scf{
+.kpi-destaque{
 
-    background:#eef4ff;
+    max-width:900px;
+
+    margin:50px auto 0;
+
+    text-align:center;
+
+    border-radius:12px;
 
     padding:30px;
 
-    margin-top:50px;
-
-    border-radius:10px;
-
-    text-align:center;
+    background:rgba(255,255,255,.08);
 
 }
 
@@ -439,18 +492,19 @@ section{
 
     text-align:center;
 
-    margin-top:30px;
+    margin-top:40px;
 
 }
 
 .dashboard-preview img{
 
     width:100%;
+
     max-width:1100px;
 
-    border-radius:12px;
-
     margin-top:20px;
+
+    border-radius:12px;
 
     box-shadow:0 10px 30px rgba(0,0,0,.15);
 
@@ -460,9 +514,9 @@ section{
 
     margin-top:40px;
 
-    background:#eef4ff;
-
     padding:30px;
+
+    background:#eef4ff;
 
     border-left:6px solid var(--azul-claro);
 
@@ -515,19 +569,22 @@ section{
 
 }
 
-.contact-form textarea{
+.contact-form input:focus,
+.contact-form textarea:focus{
 
-    min-height:140px;
+    outline:none;
 
-    resize:vertical;
+    border-color:var(--azul-claro);
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
 
 }
 
-.contact-form button{
+.contact-form textarea{
 
-    border:none;
+    resize:vertical;
 
-    cursor:pointer;
+    min-height:140px;
 
 }
 
@@ -575,13 +632,41 @@ footer{
 
     padding:40px 20px;
 
+    border-top:1px solid rgba(255,255,255,.08);
+
 }
 
 footer p{
 
-    margin:0;
-
     color:#dbe7f5;
+
+}
+
+.validation-badges{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.validation-badges .scf-brand{
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+.validation-badges .scf-brand:hover{
+
+    transform:translateY(-2px);
 
 }
 
@@ -592,6 +677,7 @@ footer p{
 body.dark-mode{
 
     background:#08111f;
+
     color:#dbe7f5;
 
 }
@@ -616,10 +702,9 @@ body.dark-mode .nav-links a{
 
 }
 
-body.dark-mode h2,
-body.dark-mode h3{
+body.dark-mode .scf-brand{
 
-    color:white;
+    background:var(--azul-claro);
 
 }
 
@@ -632,8 +717,14 @@ body.dark-mode .card-resultado{
 
 }
 
-body.dark-mode .card p,
-body.dark-mode .card-resultado p{
+body.dark-mode .card h3,
+body.dark-mode .card-resultado h3{
+
+    color:white;
+
+}
+
+body.dark-mode .card p{
 
     color:#dbe7f5;
 
@@ -687,44 +778,8 @@ body.dark-mode .fluxo-scf{
 
     .scf-core{
 
-        width:100%;
-
-        padding:25px;
+        padding:30px;
 
     }
-
-}
-
-.validation-badges {
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:12px;
-
-    margin-top:20px;
-
-    flex-wrap:wrap;
-
-}
-
-.validation-badges a {
-
-    text-decoration:none;
-
-}
-
-.validation-badges svg {
-
-    transition:.3s ease;
-
-}
-
-.validation-badges svg:hover {
-
-    transform:translateY(-2px);
-
-    filter:brightness(1.08);
 
 }
