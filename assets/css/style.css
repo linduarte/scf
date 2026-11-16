@@ -391,23 +391,23 @@ section{
 
 }
 
-.scf-core p {
+.scf-subtitle {
 
-    color:#2563eb;
+    color: var(--azul-claro);
 
-    font-size:1.1rem;
+    font-size: 1.1rem;
 
-    font-weight:600;
+    font-weight: 600;
 
-    margin-bottom:12px;
+    margin: 12px 0;
 
 }
 
-.scf-core span {
+.scf-description {
 
-    color:#64748b;
+    color: #475569;
 
-    font-size:.95rem;
+    font-size: .95rem;
 
 }
 
