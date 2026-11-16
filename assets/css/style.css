@@ -365,31 +365,52 @@ section{
 
 }
 
-.scf-core{
+.scf-core {
 
     background:white;
 
-    color:var(--azul-escuro);
+    padding:40px 60px;
 
-    padding:30px 60px;
-
-    border-radius:12px;
+    border-radius:16px;
 
     text-align:center;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    min-width:420px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.20);
 
 }
 
-.scf-core h3{
+.scf-core h3 {
 
-    color:var(--azul-escuro);
+    color:#0b1f3a;
 
-    font-size:2rem;
+    font-size:2.4rem;
 
-    margin:0;
+    margin-bottom:10px;
 
 }
+
+.scf-core p {
+
+    color:#2563eb;
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+}
+
+.scf-core span {
+
+    color:#64748b;
+
+    font-size:.95rem;
+
+}
+
 
 /* ======================================================
    FLUXOS
