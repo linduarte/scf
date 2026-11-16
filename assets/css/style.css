@@ -63,6 +63,12 @@ section{
 
 }
 
+/* Mais específico ainda (só os <p> dentro do container) */
+#sobre-scf .container p {
+    font-size: 1.25rem;
+}
+
+
 /* ======================================================
    TIPOGRAFIA
 ====================================================== */
@@ -674,13 +680,34 @@ footer p{
    DARK MODE
 ====================================================== */
 
-body.dark-mode{
+body.dark-mode .light-section {
 
     background:#08111f;
 
     color:#dbe7f5;
 
 }
+
+body.dark-mode .light-section p {
+
+    color:#dbe7f5;
+
+}
+
+body.dark-mode .light-section h1,
+body.dark-mode .light-section h2,
+body.dark-mode .light-section h3 {
+
+    color:white;
+
+}
+
+body.dark-mode .light-section .scf-brand {
+
+    background:#2563eb;
+
+}
+
 
 body.dark-mode .navbar{
 
@@ -781,5 +808,31 @@ body.dark-mode .fluxo-scf{
         padding:30px;
 
     }
+
+}
+
+.light-section {
+    background:white;
+}
+
+/* TESTE DARK MODE */
+
+body.dark-mode .light-section {
+
+    background:#08111f !important;
+
+}
+
+body.dark-mode .light-section p {
+
+    color:#dbe7f5 !important;
+
+}
+
+body.dark-mode .light-section h1,
+body.dark-mode .light-section h2,
+body.dark-mode .light-section h3 {
+
+    color:white !important;
 
 }
