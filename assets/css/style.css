@@ -63,23 +63,17 @@ section{
 
 }
 
-/* Mais específico ainda (só os <p> dentro do container) */
-#sobre-scf .container p {
-    font-size: 1.375rem;
-}
+#hero p,
+#sobre-scf p,
+#dashboards p,
+#empresa p,
+#resultados > .container > p,
+#ecossistema > .container > p {
 
+    font-size: clamp(1.1rem, 1vw + 1rem, 1.35rem);
 
-/* Pelo ID da section */
-section#hero p {
-    font-size: 1.375rem;
-}
+    line-height: 1.8;
 
-section#dashboards p{
-    font-size: 1.375rem;
-}
-
-section#empresa p{
-    font-size: 1.375rem;
 }
 
 
@@ -829,7 +823,9 @@ body.dark-mode .fluxo-scf{
     background:white;
 }
 
-/* TESTE DARK MODE */
+/* ======================================================
+   DARK MODE - LIGHT SECTIONS
+====================================================== */
 
 body.dark-mode .light-section {
 
