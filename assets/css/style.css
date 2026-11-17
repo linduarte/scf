@@ -65,7 +65,21 @@ section{
 
 /* Mais específico ainda (só os <p> dentro do container) */
 #sobre-scf .container p {
-    font-size: 1.25rem;
+    font-size: 1.375rem;
+}
+
+
+/* Pelo ID da section */
+section#hero p {
+    font-size: 1.375rem;
+}
+
+section#dashboards p{
+    font-size: 1.375rem;
+}
+
+section#empresa p{
+    font-size: 1.375rem;
 }
 
 
