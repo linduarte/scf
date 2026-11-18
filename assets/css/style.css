@@ -846,3 +846,33 @@ body.dark-mode .light-section h3 {
     color:white !important;
 
 }
+
+/* ======================================================
+   DIAGRAMAS
+====================================================== */
+
+.diagram-container {
+
+    margin: 50px 0;
+
+    text-align: center;
+
+}
+
+.diagram {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    height: auto;
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+
+}
